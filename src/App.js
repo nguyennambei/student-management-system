@@ -5,7 +5,8 @@ import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom'
 
 const routes = [
   {
-    path:'/',
+    path:'/home',
+    exact:true,
     main: ()=><h2>main Home</h2>
   },
   {
@@ -19,22 +20,20 @@ function App() {
   const toggle = ()=>setItOpen(!itOpen);
   return (
     <Router>
-      <div>
-        <div>
-          <ul>
-            <li><NavLink to='/' onClick={toggle}>Home</NavLink>
-            <Collapse isOpen={itOpen}>
-              <NavLink to='/p1' >Add</NavLink>
-            </Collapse>
+      <div id='wrapper'>
+          <ul className='navbar-nav'>
+            <NavLink className='logo' to='/home'>Hello Ad</NavLink>
+            <li>
+              <NavLink className='nav-link' activeClassName='active' to='/home'>Home</NavLink>
             </li>
-            <li><NavLink to='/about' >About</NavLink></li>
+            <li><NavLink className='nav-link' activeClassName='active' to='/about' >About</NavLink></li>
           </ul>
-        </div>
-        <div>
+        <div id='content-wrapper'>
           <Switch>
             {routes.map((route,index)=>(
               <Route 
                 key={index}
+                exact={route.exact}
                 path={route.path}
                 children={<route.main />}
               />
