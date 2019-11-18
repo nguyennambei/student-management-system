@@ -1,13 +1,18 @@
 import React from 'react';
 import StudentItem from './StudentItem';
+import NullItem from './NullItem';
 
 export default class StudentList extends React.Component{
     render(){
         const {listStudents}=this.props;
-        var elmStudents = listStudents.map((data,index)=>{
+        try{
+            var elmStudents = listStudents.map((data,index)=>{
             return <StudentItem key={index} student={data}/>
         })
-        console.log(listStudents);
+        }catch(e){
+            var elmStudents = <NullItem />
+
+        }
         return(
             <div className='card-body'>
                 <table className='table table-striped'>

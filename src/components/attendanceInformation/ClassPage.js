@@ -8,6 +8,7 @@ export default class ClassPage extends React.Component{
     constructor(props){
         super(props);
         this.state={
+            
             dates: this.getNow(),
             listStudents:  []
         };
@@ -33,6 +34,7 @@ export default class ClassPage extends React.Component{
         // );
         this.itemRef.ref(day[0]).child(day[1]).child(day[2]).once('value',(data)=>{
             this.setState({listStudents:data.val()})
+            console.log(data.val())
         })
 
     }
@@ -46,7 +48,7 @@ export default class ClassPage extends React.Component{
                 
                 <div className='card mb-3'>
                     <div className='card-header date-field'>
-                        <input type='date' onChange={this.onHandleChange} value={this.state.dates}/>
+                        <input type='date' onChange={this.onHandleChange} value={this.state.dates} max={this.getNow()} />
                     </div>
                     
                     <StudentList listStudents = {listStudents}/>
