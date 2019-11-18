@@ -1,13 +1,15 @@
 import React,{useState} from 'react';
 import './App.css';
 import {Button,Collapse} from 'reactstrap';
-import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom'
+import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom';
+
+import ClassPage from './components/attendanceInformation/ClassPage';
 
 const routes = [
   {
     path:'/home',
     exact:true,
-    main: ()=><h2>main Home</h2>
+    main: ()=><ClassPage />
   },
   {
     path:'/about',

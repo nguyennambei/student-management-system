@@ -1,0 +1,10 @@
+#content-wrapper{
+    overflow-x: hidden;
+    width: 100%;
+    padding-top: 1rem;
+}
+.date-field input {
+    background-color:#f7f7f7;
+    border: none;
+    padding: 5px 10px;
+   }
