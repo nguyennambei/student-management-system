@@ -22,18 +22,22 @@ export default class ClassPage extends React.Component{
         return y+'-'+m+'-'+d;
       }
     onHandleChange=(e)=>{
-        let day=e.target.value.split('-');
-        this.setState({dates : e.target.value});
-        // this.itemRef.ref(day[0]).child(day[1]).child(day[2]).update(
-        //     [
-        //         {id_student:181001,active:0},
-        //         {id_student:181003,active:1,cause:'電車遅れ'},
-        //         {id_student:181002,active:3},
-        //     ]
-        // );
-        this.itemRef.ref(day[0]).child(day[1]).child(day[2]).once('value',(data)=>{
-            this.setState({listStudents:data.val()})
-        })
+        try{
+            let day=e.target.value.split('-');
+            this.setState({dates : e.target.value});
+            // this.itemRef.ref(day[0]).child(day[1]).child(day[2]).update(
+                //     [
+                    //         {id_student:181001,active:0},
+                    //         {id_student:181003,active:1,cause:'電車遅れ'},
+                    //         {id_student:181002,active:3},
+                    //     ]
+                    // );
+                    this.itemRef.ref(day[0]).child(day[1]).child(day[2]).once('value',(data)=>{
+                        this.setState({listStudents:data.val()})
+                    })
+        }catch(e){
+            
+        }
 
     }
     
