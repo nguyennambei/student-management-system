@@ -23,7 +23,6 @@ export default class ClassPage extends React.Component{
       }
     onHandleChange=(e)=>{
         let day=e.target.value.split('-');
-        console.log(day[0],day[1],day[2])
         this.setState({dates : e.target.value});
         // this.itemRef.ref(day[0]).child(day[1]).child(day[2]).update(
         //     [
@@ -34,7 +33,6 @@ export default class ClassPage extends React.Component{
         // );
         this.itemRef.ref(day[0]).child(day[1]).child(day[2]).once('value',(data)=>{
             this.setState({listStudents:data.val()})
-            console.log(data.val())
         })
 
     }
@@ -57,5 +55,14 @@ export default class ClassPage extends React.Component{
 
             </div>
         );
+    }
+    componentDidMount(){
+        let omar = new Date();
+        let y  = omar.getFullYear().toString();
+        let m = (omar.getMonth()+1).toString();
+        let d = omar.getDate().toString();
+        this.itemRef.ref(y).child(m).child(d).once('value',(data)=>{
+            this.setState({listStudents:data.val()})
+        })
     }
 }

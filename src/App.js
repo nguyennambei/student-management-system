@@ -8,7 +8,7 @@ import StudentData from './components/studentData/StudentData';
 
 const routes = [
   {
-    path:'/home',
+    path:'/attendanceInfomation',
     exact:true,
     main: ()=><ClassPage />
   },
@@ -25,9 +25,9 @@ function App() {
     <Router>
       <div id='wrapper'>
           <ul className='navbar-nav'>
-            <NavLink className='logo' to='/home'>Hello Ad</NavLink>
+            <NavLink className='logo' to='/attendanceInfomation'>Hello Ad</NavLink>
             <li>
-              <NavLink className='nav-link' activeClassName='active' to='/home'>Home</NavLink>
+              <NavLink className='nav-link' activeClassName='active' to='/attendanceInfomation'>出席確認</NavLink>
             </li>
             <li><NavLink className='nav-link' activeClassName='active' to='/studentdata' >学生のデータ</NavLink></li>
           </ul>
