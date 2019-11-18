@@ -4,6 +4,7 @@ import {Button,Collapse} from 'reactstrap';
 import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom';
 
 import ClassPage from './components/attendanceInformation/ClassPage';
+import StudentData from './components/studentData/StudentData';
 
 const routes = [
   {
@@ -12,8 +13,8 @@ const routes = [
     main: ()=><ClassPage />
   },
   {
-    path:'/about',
-    main: ()=><h2>main Abput</h2>
+    path:'/studentdata',
+    main: ()=><StudentData />
   },
 ]
 
@@ -28,7 +29,7 @@ function App() {
             <li>
               <NavLink className='nav-link' activeClassName='active' to='/home'>Home</NavLink>
             </li>
-            <li><NavLink className='nav-link' activeClassName='active' to='/about' >About</NavLink></li>
+            <li><NavLink className='nav-link' activeClassName='active' to='/studentdata' >学生のデータ</NavLink></li>
           </ul>
         <div id='content-wrapper'>
           <Switch>
