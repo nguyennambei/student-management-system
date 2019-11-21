@@ -1,10 +1,10 @@
 import React from 'react';
-import './ClassPage.css';
-import StudentList from './StudentList';
+import './AttendancePage.css';
+import AttendanceList from './AttendanceList';
 import {firebaseApp} from '../../FirebaseConfig.js'
 
 
-export default class ClassPage extends React.Component{
+export default class AttendancePage extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -53,7 +53,7 @@ export default class ClassPage extends React.Component{
                         <input type='date' onChange={this.onHandleChange} value={this.state.dates} max={this.getNow()} />
                     </div>
                     
-                    <StudentList listStudents = {listStudents}/>
+                    <AttendanceList listStudents = {listStudents}/>
                             
                 </div>
 

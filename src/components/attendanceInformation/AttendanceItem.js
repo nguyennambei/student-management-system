@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class StudentItem extends React.Component{
+export default class AttendanceItem extends React.Component{
     checkAttendance=(active,cause)=>{
         if(active){
             return <td>{active}</td>

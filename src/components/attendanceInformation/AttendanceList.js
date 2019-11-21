@@ -1,13 +1,13 @@
 import React from 'react';
-import StudentItem from './StudentItem';
+import AttendanceItem from './AttendanceItem';
 import NullItem from './NullItem';
 
-export default class StudentList extends React.Component{
+export default class AttendanceList extends React.Component{
     render(){
         const {listStudents}=this.props;
         try{
             var elmStudents = listStudents.map((data,index)=>{
-            return <StudentItem key={index} student={data}/>
+            return <AttendanceItem key={index} student={data}/>
         })
         }catch(e){
             var elmStudents = <NullItem />

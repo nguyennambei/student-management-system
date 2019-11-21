@@ -3,14 +3,14 @@ import './App.css';
 import {Button,Collapse} from 'reactstrap';
 import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom';
 
-import ClassPage from './components/attendanceInformation/ClassPage';
+import AttendancePage from './components/attendanceInformation/AttendancePage';
 import StudentData from './components/studentData/StudentData';
 
 const routes = [
   {
     path:'/attendanceInfomation',
     exact:true,
-    main: ()=><ClassPage />
+    main: ()=><AttendancePage />
   },
   {
     path:'/studentdata',
