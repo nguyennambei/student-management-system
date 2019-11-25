@@ -35,7 +35,7 @@ export default class AddStudent extends React.Component{
         const uploadTask = this.storage.ref(`student_img/${student_img.name}`).put(student_img);
         uploadTask.on('state_changed',
         (snapshot)=>{
-            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes)*100);
+            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes)*100).toString()+'%';
             this.setState({progress});
         },
         (error)=>{
@@ -44,7 +44,7 @@ export default class AddStudent extends React.Component{
         ()=>{
             this.storage.ref('student_img').child(student_img.name).getDownloadURL().then(url=>{
                 this.setState({url});
-                this.database.update({
+                this.database.push({
                     id: this.state.student_number,
                     name: this.state.student_name,
                     furi_name: this.state.furi_name,
@@ -53,7 +53,11 @@ export default class AddStudent extends React.Component{
                     phone : this.state.phone,
                     address : this.state.address,
                     date: this.state.date
-
+                });
+                this.setState({
+                    progress:'0%',student_img:null,url:'',
+                    student_name:'',furi_name:'',country:'',student_number:'',phone:'',address:'',
+                    year:'',month:'',day:'',date:''
                 })
             })
         })
@@ -128,10 +132,10 @@ export default class AddStudent extends React.Component{
                     <div className="form-group row">
                         <label htmlFor="staticAvatar" className="col-sm-2 col-form-label">学生の写真</label>
                         <div className="col-sm-10">
-                            <input type="file" className="form-control-file" id="staticAvatar" name="student_img"  onChange={this.handleChangeFiles}/>
+                            <input type="file" className="form-control-file" id="staticAvatar" value name="student_img"  onChange={this.handleChangeFiles}/>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>送信</button>
+                    <input type="button" className="btn btn-primary" onClick={this.handleSubmit} value="送信"/>
                 </form>
             </div>
             </div>
