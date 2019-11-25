@@ -1,14 +1,14 @@
 import * as firebase from 'firebase';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBVY8Q0yk5jeUiQlSD5unaADWErwdsc324",
-    authDomain: "fir-rn-4fd7b.firebaseapp.com",
-    databaseURL: "https://fir-rn-4fd7b.firebaseio.com",
-    projectId: "fir-rn-4fd7b",
-    storageBucket: "fir-rn-4fd7b.appspot.com",
-    messagingSenderId: "807154887529",
-    appId: "1:807154887529:web:73b26687d0c031378f6bf8",
-    measurementId: "G-MG8W0GHGNW"
+  apiKey: "AIzaSyBxA2Xpp4BrhiUxcUPB0GDjlhpw68HnrN8",
+  authDomain: "sams-yomi.firebaseapp.com",
+  databaseURL: "https://sams-yomi.firebaseio.com",
+  projectId: "sams-yomi",
+  storageBucket: "sams-yomi.appspot.com",
+  messagingSenderId: "390414194495",
+  appId: "1:390414194495:web:4af3813bb8ac93e32d258a",
+  measurementId: "G-GG3PJ60206"
   };
   // Initialize Firebase
 export const firebaseApp = firebase.initializeApp(firebaseConfig);
