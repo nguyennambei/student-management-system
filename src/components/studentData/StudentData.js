@@ -10,7 +10,7 @@ const routes = [
       main: ()=><StudentList />
     },
     {
-      path:'/studentdata/addstudent',
+      path:'/studentdata-addstudent',
       main: ()=><AddStudent />
     },
   ]
@@ -22,7 +22,7 @@ export default class StudentData extends React.Component{
                 <div className='container-fluid'>
                     <h1>学生のデータ</h1>
                     <NavLink to='/studentdata' className='btn btn-light' activeClassName='active'>学生をデータ</NavLink>
-                    <NavLink to='/studentdata/addstudent' className='btn btn-info ml-3' activeClassName='active'>学生を追加</NavLink>
+                    <NavLink to='/studentdata-addstudent' className='btn btn-info ml-3' activeClassName='active'>学生を追加</NavLink>
                     
                     <hr />
                     <Switch>
