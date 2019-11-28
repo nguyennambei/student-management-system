@@ -132,7 +132,7 @@ export default class AddStudent extends React.Component{
                     <div className="form-group row">
                         <label htmlFor="staticAvatar" className="col-sm-2 col-form-label">学生の写真</label>
                         <div className="col-sm-10">
-                            <input type="file" className="form-control-file" id="staticAvatar" value name="student_img"  onChange={this.handleChangeFiles}/>
+                            <input type="file" className="form-control-file" id="staticAvatar" name="student_img"  onChange={this.handleChangeFiles}/>
                         </div>
                     </div>
                     <input type="button" className="btn btn-primary" onClick={this.handleSubmit} value="送信"/>
