@@ -15,7 +15,7 @@ const routes = [
     },
   ]
 
-export default class StudentData extends React.Component{
+export default class StudentDataPage extends React.Component{
     render(){
         return(
             <Router>

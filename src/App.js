@@ -4,7 +4,7 @@ import {Button,Collapse} from 'reactstrap';
 import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom';
 
 import AttendancePage from './components/attendanceInformation/AttendancePage';
-import StudentData from './components/studentData/StudentData';
+import StudentDataPage from './components/studentData/StudentDataPage';
 
 const routes = [
   {
@@ -14,7 +14,8 @@ const routes = [
   },
   {
     path:'/studentdata',
-    main: ()=><StudentData />
+    exact:false,
+    main: ()=><StudentDataPage />
   },
 ]
 
